@@ -1,4 +1,4 @@
-# Maya (v3.2)
+# Maya - AI DATA ANALYST
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-05998B?style=flat-square&logo=FastAPI&logoColor=white)
