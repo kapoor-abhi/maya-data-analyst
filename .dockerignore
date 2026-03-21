@@ -1,0 +1,10 @@
+myvenv/
+__pycache__/
+*.pyc
+.git/
+.env
+tests/
+*.egg-info/
+.pytest_cache/
+storage/
+sandbox/

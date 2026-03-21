@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+# Minimal data science environment for sandboxed code execution
+RUN pip install --no-cache-dir \
+    pandas numpy scipy scikit-learn \
+    matplotlib seaborn plotly \
+    xgboost lightgbm \
+    openpyxl pyarrow
+
+WORKDIR /sandbox

@@ -1,0 +1,60 @@
+# ══════════════════════════════════════════════════════
+#  Maya — Python Dependencies
+# ══════════════════════════════════════════════════════
+
+# ── Core Framework ────────────────────────────────────
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+
+# ── LangChain & LangGraph ────────────────────────────
+langchain>=0.3.0
+langchain-core>=0.3.0
+langgraph>=0.2.0
+langchain-community>=0.3.0
+
+# ── LLM Providers (install what you need) ────────────
+langchain-groq>=0.2.0
+# langchain-openai>=0.2.0
+# langchain-anthropic>=0.3.0
+# langchain-google-genai>=2.0.0
+# langchain-ollama>=0.2.0
+
+# ── PostgreSQL (checkpointing — required) ─────────────
+langgraph-checkpoint-postgres>=2.0.0
+psycopg[binary,pool]>=3.2.0
+psycopg-pool>=3.2.0
+
+# ── Redis (optional caching) ──────────────────────────
+# redis>=5.0.0
+
+# ── Data Processing ───────────────────────────────────
+pandas>=2.0.0
+numpy>=1.26.0
+scipy>=1.11.0
+duckdb>=1.0.0
+openpyxl>=3.1.0
+pyarrow>=15.0.0
+
+# ── Machine Learning ──────────────────────────────────
+scikit-learn>=1.4.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+imbalanced-learn>=0.12.0
+
+# ── Visualization ─────────────────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+kaleido>=0.2.1
+
+# ── Security / Validation ────────────────────────────
+pydantic-settings>=2.0.0
+
+# ── EDA (optional) ────────────────────────────────────
+# ydata-profiling>=4.6.0
+
+# ── Observability (optional) ─────────────────────────
+# langfuse>=2.0.0

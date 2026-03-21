@@ -1,0 +1,8 @@
+.env
+myvenv
+storage
+__pycache__
+.DS_Store
+.env.example
+.env.example
+.pytest_cache

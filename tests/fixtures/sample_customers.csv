@@ -1,0 +1,51 @@
+customer_id,customer_name,age,city,signup_date,tier
+C001,Karen Brown,52,New York,2022-03-08,Gold
+C002,Olivia Martinez,36,Los Angeles,2022-02-20,Platinum
+C003,Olivia Jones,63,Dallas,2023-08-05,Silver
+C004,Alice Smith,-5,San Jose,2023-08-06,Bronze
+C005,Diana Rodriguez,30,Dallas,2022-08-25,Gold
+C006,Karen Rodriguez,48,Denver,2023-06-27,Platinum
+C007,Karen Johnson,53,Denver,2022-10-11,Gold
+C008,Alice Garcia,35,  los angeles,2022-09-03,Silver
+C009,Nick Garcia,28,San Antonio,2022-05-24,Gold
+C010,Alice Miller,39,Houston,2023-07-30,Platinum
+C011,Bob Brown,63,Denver,2023-11-11,Bronze
+C012,Mona Garcia,37,Chicago,2022-05-03,Silver
+C013,Bob Rodriguez,35,Denver,2023-04-25,Silver
+C014,Frank Williams,60,New York,2023-02-22,Silver
+C015,Charlie Rodriguez,38,Chicago,2023-08-12,Bronze
+C016,,44,Houston,2022-04-09,Gold
+C017,Alice Williams,38,New York,2023-07-26,Platinum
+C018,Iris Johnson,26,San Jose,2022-08-30,Gold
+C019,Iris Martinez,28,San Jose,2022-07-05,Silver
+C020,Jack Smith,64,Austin,2023-01-28,Platinum
+C021,Karen Smith,25,San Jose,2022-10-17,Platinum
+C022,Karen Johnson,53,San Jose,2023-09-18,Bronze
+C023,Frank Martinez,31,Los Angeles,2023-07-26,Gold
+C024,Jack Martinez,57,San Antonio,2022-11-07,Gold
+C025,Henry Rodriguez,60,Dallas,2023-08-23,Bronze
+C026,Nick Rodriguez,35,Dallas,2022-08-27,Silver
+C027,Grace Garcia,51,Dallas,2022-10-03,Bronze
+C028,Frank Miller,42,Phoenix,2022-11-14,Silver
+C029,Karen Davis,26,Los Angeles,2023-09-06,Bronze
+C030,Grace Johnson,45,Chicago,2022-05-12,Bronze
+C031,Jack Rodriguez,57,San Antonio,2022-01-15,Bronze
+C032,Grace Garcia,64,Dallas,2023-10-11,Gold
+C033,Jack Jones,44,Los Angeles,2022-04-20,Silver
+C034,Charlie Davis,36,Los Angeles,2022-12-09,Gold
+C035,Bob Jones,58,Houston,2022-09-19,Bronze
+C036,Jack Jones,23,Chicago,2023-02-26,Gold
+C037,Olivia Garcia,44,New York,2023-05-31,Silver
+C038,Jack Miller,26,Chicago,2022-02-22,Bronze
+C039,Bob Rodriguez,35,Dallas,2022-09-29,Platinum
+C040,Frank Williams,45,Phoenix,2023-01-04,Bronze
+C041,Olivia Smith,31,Chicago,2022-03-10,Bronze
+C042,Karen Johnson,39,San Jose,2022-01-24,Platinum
+C043,Henry Martinez,50,Dallas,2023-02-26,Silver
+C044,Mona Rodriguez,29,San Antonio,2022-09-18,Bronze
+C045,Eve Martinez,53,Austin,2022-01-18,Gold
+C046,Alice Brown,47,Denver,2023-10-07,Bronze
+C047,Diana Jones,35,Chicago,2023-03-16,Gold
+C048,Frank Johnson,22,San Jose,2022-09-18,Silver
+C049,Charlie Miller,56,Houston,2022-07-08,Gold
+C050,Bob Miller,24,Dallas,2023-11-13,Platinum

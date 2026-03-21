@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+  # ── Maya FastAPI Backend ────────────────────────────────────────
+  maya:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/maya
+      - POSTGRES_HOST=postgres
+      - REDIS_URL=redis://redis:6379
+      - STORAGE_BASE=/data/storage
+      - SANDBOX_IMAGE=python-data-sandbox:latest
+    env_file:
+      - .env
+    volumes:
+      - maya_storage:/data/storage
+      - /var/run/docker.sock:/var/run/docker.sock  # for Docker sandbox
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+    networks:
+      - maya-net
+
+  # ── PostgreSQL (LangGraph checkpointing) ───────────────────────
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: maya
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - maya-net
+
+  # ── Redis (LLM response cache) ─────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    command: redis-server --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    networks:
+      - maya-net
+
+volumes:
+  maya_storage:
+  postgres_data:
+  redis_data:
+
+networks:
+  maya-net:
+    driver: bridge

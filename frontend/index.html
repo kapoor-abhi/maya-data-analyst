@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maya — Analytical Intelligence</title>
+<meta name="description" content="Maya AI: Ingest, clean, engineer, train, and query your data from a single instruction." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ═══ Header ═══ -->
+  <header id="header">
+    <div class="logo-group">
+      <div class="logo-orb"></div>
+      <span class="logo-text">Maya</span>
+      <span class="logo-ver">v3.0</span>
+    </div>
+    <div class="header-right">
+      <span class="badge" id="provider-badge">Groq</span>
+      <div class="status-pill">
+        <div class="status-dot" id="status-dot"></div>
+        <span id="status-label">ready</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ Sidebar ═══ -->
+  <aside id="sidebar">
+    <div class="sidebar-title">Data Sources</div>
+    <div id="drop-zone" onclick="document.getElementById('file-input').click()">
+      <div class="dz-icon">📂</div>
+      <div class="dz-text"><b>Select files</b> or drag & drop</div>
+      <div class="dz-sub">CSV · Excel · Parquet · JSON</div>
+    </div>
+    <input type="file" id="file-input" multiple accept=".csv,.xlsx,.xls,.parquet,.json" />
+    <div id="file-list"></div>
+    <div id="sidebar-stats">
+      <div class="stat-box"><div class="stat-val" id="stat-rows">—</div><div class="stat-label">Rows</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-cols">—</div><div class="stat-label">Columns</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-files">0</div><div class="stat-label">Files</div></div>
+      <div class="stat-box"><div class="stat-val" id="stat-mb">—</div><div class="stat-label">MB</div></div>
+    </div>
+  </aside>
+
+  <!-- ═══ Main ═══ -->
+  <main id="main">
+    <div id="tabs">
+      <div class="tab active" data-tab="chat" onclick="switchTab('chat')">Chat</div>
+      <div class="tab" data-tab="data" onclick="switchTab('data')">Data</div>
+      <div class="tab" data-tab="plan" onclick="switchTab('plan')">Plan</div>
+      <div class="tab" data-tab="ml" onclick="switchTab('ml')">Model</div>
+    </div>
+
+    <!-- Hero / Greeting -->
+    <div id="greeting-view">
+      <div class="bubble-canvas"></div>
+      <div class="hero-content">
+        <div class="hero-orb" title="Click to hear Maya speak"></div>
+        <div class="hero-label">Analytical Intelligence</div>
+        <div class="hero-title">Hello, I'm Maya.</div>
+        <div class="hero-sub">
+          I ingest your data, clean it, engineer features,
+          train predictive models, and answer questions —
+          all from a single instruction.
+        </div>
+        <div class="hero-caps">
+          <span class="cap-tag">Ingestion</span>
+          <span class="cap-tag">Cleaning</span>
+          <span class="cap-tag">Feature Engineering</span>
+          <span class="cap-tag">AutoML</span>
+          <span class="cap-tag">Forecasting</span>
+          <span class="cap-tag">SQL Queries</span>
+          <span class="cap-tag">Visualisation</span>
+          <span class="cap-tag">Session Resume</span>
+        </div>
+        <div class="hero-hint">Upload files in the sidebar to begin ↗</div>
+      </div>
+    </div>
+
+    <!-- Chat -->
+    <div id="chat-view" class="hidden" style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+      <div id="messages"></div>
+      <div id="input-area">
+        <div class="input-wrap">
+          <textarea id="msg-input" rows="1" placeholder="Ask Maya anything about your data…"></textarea>
+          <button class="send-btn" id="send-btn" onclick="sendMessage()">↑</button>
+        </div>
+        <div class="sug-row">
+          <div class="sug" onclick="useHint(this)">Build full analysis pipeline</div>
+          <div class="sug" onclick="useHint(this)">Summarise the dataset</div>
+          <div class="sug" onclick="useHint(this)">Train a predictive model</div>
+          <div class="sug" onclick="useHint(this)">Plot variable distributions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data / Plan / ML -->
+    <div id="data-view" class="hidden"><div id="data-table-container"></div></div>
+    <div id="plan-view" class="hidden"><div id="plan-container" style="font-family:var(--mono);font-size:11px;color:var(--ink4);">No execution plan yet.</div></div>
+    <div id="ml-view" class="hidden"><div id="ml-container" style="font-family:var(--mono);font-size:11px;color:var(--ink4);">No model trained yet.</div></div>
+  </main>
+
+  <!-- ═══ Activity Panel ═══ -->
+  <aside id="activity-panel">
+    <div class="sidebar-title">Activity <span id="feed-count" style="float:right;color:var(--ink5);">0</span></div>
+    <div id="activity-feed"></div>
+    <div id="progress-sec">
+      <div class="prog-hd">
+        <span id="progress-stage">idle</span>
+        <span id="progress-pct">—</span>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+  </aside>
+</div>
+
+<!-- ═══ Upload Modal ═══ -->
+<div id="upload-modal" class="overlay hidden">
+  <div class="modal">
+    <div class="modal-title">Configure Analysis</div>
+    <div class="modal-sub">Define the pipeline Maya will execute</div>
+    <label class="fld-lbl">Selected files</label>
+    <div class="fld-files" id="modal-files"></div>
+    <label class="fld-lbl">Instruction</label>
+    <textarea class="fi" id="modal-prompt" placeholder="E.g. clean the data, engineer features, train a sales model, and summarise results."></textarea>
+    <label class="fld-lbl">LLM Provider</label>
+    <select class="fi" id="modal-provider">
+      <option value="groq">Groq — llama-3.3-70b</option>
+      <option value="openai">OpenAI — gpt-4o</option>
+      <option value="anthropic">Anthropic — claude-sonnet</option>
+      <option value="gemini">Google — gemini-1.5-pro</option>
+      <option value="ollama">Ollama — local</option>
+    </select>
+    <div class="modal-acts">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" id="launch-btn" onclick="launchPipeline()">Run Pipeline</button>
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>
