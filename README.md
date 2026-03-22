@@ -1,15 +1,37 @@
+<div align="center">
+
 # Maya - AI DATA ANALYST
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-05998B?style=flat-square&logo=FastAPI&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=PostgreSQL&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white)
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=DuckDB&logoColor=black)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=Pandas&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=Pytest&logoColor=white)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-05998B?style=for-the-badge&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain.com)
+[![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://langchain.com/langgraph)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=PostgreSQL&logoColor=white)](https://postgresql.org)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=Redis&logoColor=white)](https://redis.io)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=Docker&logoColor=white)](https://docker.com)
+<br>
+[![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=DuckDB&logoColor=black)](https://duckdb.org)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=Pandas&logoColor=white)](https://pandas.pydata.org)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org)
+[![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)](https://scipy.org)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+<br>
+[![XGBoost](https://img.shields.io/badge/XGBoost-1E8CBE?style=for-the-badge&logo=xgboost&logoColor=white)](https://xgboost.ai)
+[![LightGBM](https://img.shields.io/badge/LightGBM-008080?style=for-the-badge&logo=lightgbm&logoColor=white)](https://lightgbm.readthedocs.io)
+[![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white)](https://matplotlib.org)
+[![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=seaborn&logoColor=white)](https://seaborn.pydata.org)
+<br>
+[![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)](https://pydantic.dev)
+[![Groq](https://img.shields.io/badge/Groq-f55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com)
+[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com)
+[![Anthropic](https://img.shields.io/badge/Anthropic-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://anthropic.com)
+<br>
+[![Google-Gemini](https://img.shields.io/badge/Google--Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini)
+[![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)](https://ollama.ai)
+[![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=Pytest&logoColor=white)](https://pytest.org)
+
+---
 
 Maya is an AI-powered data analyst designed to handle complex multi-file datasets. It automates the entire analytical lifecycle: from ingestion and cleaning to feature engineering and machine learning. Built for reliability, Maya uses sandboxed code execution and provides real-time visibility into its internal operations.
 
@@ -17,7 +39,9 @@ This report details the architecture and design decisions that make Maya a robus
 
 ---
 
-## Capabilities
+</div>
+
+## <p align="center">Capabilities</p>
 
 Maya provides a comprehensive suite of features for data analysis:
 
@@ -31,24 +55,27 @@ Maya provides a comprehensive suite of features for data analysis:
 - **Workflow Planning**: Generates a structured JSON plan for complex tasks and executes them sequentially after approval.
 - **Persistent State**: Uses PostgreSQL-backed LangGraph checkpointing for long-running, resumable pipelines.
 
-The goal is to provide a complete system—not just a demo—integrating the UI, API, orchestration, and a full test suite.
+> [!NOTE]
+> The goal is to provide a complete system — not just a demo — integrating the UI, API, orchestration, and a full test suite.
 
 ---
 
-## Architecture Overview
+## <p align="center">Architecture Overview</p>
 
+<div align="center">
 ![Maya System Architecture](screenshots/system_architecture.png)
+</div>
 
-Design Principles:
-
-- **Safety**: All LLM-generated code runs in a Docker sandbox with no network access and strict resource limits.
-- **Reliability**: Pipelines run as background tasks, and state is preserved via checkpoints for resume capability.
-- **Transparency**: A live activity feed provides real-time visibility into agent actions.
-- **Process-Driven**: The workflow mirrors a professional data science process: profiling, cleaning, verifying, and iterating.
+> [!IMPORTANT]
+> **Design Principles:**
+> - **Safety**: All LLM-generated code runs in a Docker sandbox with no network access and strict resource limits.
+> - **Reliability**: Pipelines run as background tasks, and state is preserved via checkpoints for resume capability.
+> - **Transparency**: A live activity feed provides real-time visibility into agent actions.
+> - **Process-Driven**: The workflow mirrors a professional data science process: profiling, cleaning, verifying, and iterating.
 
 ---
 
-## Runtime Flow
+## <p align="center">Runtime Flow</p>
 
 ### Pipeline Execution
 1. The UI establishes an SSE stream connection before uploading to capture all early events.
@@ -65,7 +92,7 @@ If a pipeline pauses for feedback or hits a failure, it can be resumed via `POST
 
 ---
 
-## System Design
+## <p align="center">System Design</p>
 
 ### State Management
 Maya uses a unified state schema (`MasterState`) in LangGraph that all agents interact with. This state manages:
@@ -92,7 +119,7 @@ The graph also tracks the overall workflow, ensuring tasks like table merging ha
 
 ---
 
-## Specialized Agents
+## <p align="center">Specialized Agents</p>
 
 ### Ingestion Agent
 Handles raw file loading (CSV, Excel, Parquet, JSON) into Pandas. It performs memory optimization (e.g., numeric downcasting) and converts datasets into serialized pickles for faster processing. Specifically, `_smart_read_csv` handles encoding and separator inference.
@@ -131,7 +158,7 @@ Functions as a project manager by creating a structured JSON execution plan for 
 
 ---
 
-## Frontend Implementation
+## <p align="center">Frontend Implementation</p>
 
 The interface is built to support real-time agentic interaction:
 - **SSE Integration**: UI opens an EventSource connection before uploading to ensure all activity logs are captured.
@@ -142,7 +169,7 @@ The interface is built to support real-time agentic interaction:
 
 ---
 
-## 7) Tools and Technology Stack (What Recruiters Expect to See)
+## <p align="center">Tools and Technology Stack</p>
 
 ### Backend / AI Orchestration
 
@@ -182,7 +209,7 @@ The interface is built to support real-time agentic interaction:
 
 ---
 
-## Project Standards and Challenges
+## <p align="center">Project Standards and Challenges</p>
 
 ### Technical Challenges
 - **Code Generation Reliability**: Managed via tool schemas (ReAct), iteration limits, and auto-retry logic for SQL and charting.
@@ -199,7 +226,7 @@ Maya is designed to follow standard data science best practices:
 
 ---
 
-## Verification and Roadmap
+## <p align="center">Verification and Roadmap</p>
 
 ### Testing
 - **Unit Tests**: Cover core storage, sandbox, and state modules (`tests/test_maya.py`).
@@ -226,7 +253,7 @@ Maya is designed to follow standard data science best practices:
 
 ---
 
-## Technical Reference
+## <p align="center">Technical Reference</p>
 
 ### Backend Stack
 - **Languages**: Python 3.11
@@ -240,7 +267,8 @@ Environmental variables (listed in `.env.example`) control LLM providers, databa
 
 ---
 
-## Appendix A) API Surface (Backend Endpoints)
+<details>
+<summary><b>Appendix A) API Surface (Backend Endpoints)</b></summary>
 
 Primary endpoints implemented in `app/main.py`:
 
@@ -258,9 +286,10 @@ Primary endpoints implemented in `app/main.py`:
 - `DELETE /reset?user_id=...` — Delete all user data and cancel tasks.
 - `GET /health` — Health probe including checkpointer type and running task count.
 
----
+</details>
 
-## Appendix B) Repository Map (What Lives Where)
+<details>
+<summary><b>Appendix B) Repository Map (What Lives Where)</b></summary>
 
 - `app/`
   - FastAPI server, SSE, background execution, checkpoint wiring
@@ -286,9 +315,10 @@ Primary endpoints implemented in `app/main.py`:
 - `Dockerfile` and `docker-compose.yml`
   - deployment and local orchestration
 
----
+</details>
 
-## Appendix C) Configuration Knobs (Operational Controls)
+<details>
+<summary><b>Appendix C) Configuration Knobs (Operational Controls)</b></summary>
 
 The system is primarily configured via environment variables:
 
@@ -300,3 +330,5 @@ The system is primarily configured via environment variables:
 - `SANDBOX_IMAGE`, `SANDBOX_TIMEOUT_SECS`, `SANDBOX_MEM_LIMIT`, `SANDBOX_LOCAL` (execution controls).
 - `AUTO_APPROVE` (bypass HITL for test/CI).
 - `ALLOWED_ORIGINS` (CORS policy).
+
+</details>
