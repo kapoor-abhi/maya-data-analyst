@@ -63,7 +63,7 @@ Maya provides a comprehensive suite of features for data analysis:
 ## <p align="center">Architecture Overview</p>
 
 <div align="center">
-![Maya System Architecture](screenshots/system_architecture.png)
+  <img src="screenshots/architecture.png" alt="Maya System Architecture" />
 </div>
 
 > [!IMPORTANT]
